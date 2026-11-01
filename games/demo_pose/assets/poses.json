@@ -1,0 +1,10 @@
+{
+  "poses": {
+    "cruise": {"clip":"fly","frame":0,"at":0},
+    "glide": {"clip":"fly","frame":40,"at":1.333333},
+    "hover": {"clip":"float","frame":0,"at":0},
+    "drift": {"clip":"float","frame":54,"at":1.8},
+    "flying0": {"clip":"__POSES","frame":0,"at":0},
+    "flying40": {"clip":"__POSES","frame":1,"at":0.033333}
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "player": {
+    "speed": 6,
+    "pitch": 1.4,
+    "turnRate": 1.4,
+    "tiltRate": 0.9,
+    "follow": 4,
+    "rise": 1.6,
+    "look": 1
+  },
+  "ground": {
+    "size": 160,
+    "colour": "#8c867c",
+    "roughness": 0.95
+  },
+  "sky": {
+    "bodies": ["soldier"],
+    "people": 60,
+    "rings": [10, 22, 34],
+    "clip": "idle",
+    "waits": [0, 2]
+  }
+}

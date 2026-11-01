@@ -1,0 +1,13 @@
+{
+ "bodies": {
+  "soldier": "characters/soldier/soldier.fbx"
+ },
+ "clips": {
+  "idle": "packs/mixamo-motions/Breathing Idle.fbx",
+  "wave": "packs/mixamo-motions/Waving.fbx",
+  "walk": "packs/Male Locomotion Pack 30FPS/walking.fbx",
+  "fly": "packs/mixamo-motions/Flying.fbx",
+  "float": "packs/mixamo-motions/Floating.fbx",
+  "__POSES": "packs/poses/flytest.fbx"
+ }
+}

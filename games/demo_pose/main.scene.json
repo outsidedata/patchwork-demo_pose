@@ -1,0 +1,166 @@
+{
+  "world": {
+    "seed": 11,
+    "defs": "demo_pose",
+    "loader": {
+      "assets": {
+        "demo_pose": { "type": "json", "url": "/games/demo_pose/assets/demo_pose.json", "preload": true },
+        "poses": { "type": "json", "url": "/games/demo_pose/assets/poses.json", "preload": true },
+        "soldier": { "type": "model", "url": "/games/demo_pose/assets/soldier.glb", "preload": true }
+      }
+    },
+    "shapes3d": {
+      "kinds": {
+        "inner": {
+          "shape": { "box": { "size": [1, 0.1, 1] } },
+          "activities": [],
+          "points": { "lane": { "spline": { "points": [[0, 0, 10], [2.5882, 0, 9.6593], [5, 0, 8.6603], [7.0711, 0, 7.0711], [8.6603, 0, 5]] } } },
+          "data": { "crowd3d": { "clip": "walk", "speed": 1.6686 } }
+        },
+        "middle": {
+          "shape": { "box": { "size": [1, 0.1, 1] } },
+          "activities": [],
+          "points": { "lane": { "spline": { "points": [[0, 0, 22], [5.694, 0, 21.2504], [11, 0, 19.0526], [15.5563, 0, 15.5563], [19.0526, 0, 11]] } } },
+          "data": { "crowd3d": { "clip": "walk", "speed": 1.6686 } }
+        },
+        "outer": {
+          "shape": { "box": { "size": [1, 0.1, 1] } },
+          "activities": [],
+          "points": { "lane": { "spline": { "points": [[0, 0, 34], [8.7998, 0, 32.8415], [17, 0, 29.4449], [24.0416, 0, 24.0416], [29.4449, 0, 17]] } } },
+          "data": { "crowd3d": { "clip": "walk", "speed": 1.6686 } }
+        },
+        "soar": {
+          "shape": { "box": { "size": [1, 0.1, 1] } },
+          "activities": [],
+          "points": { "arc": { "spline": { "points": [[0, 0, 34], [8.0234, 5, 29.9437], [14, 10, 24.2487], [17.6777, 5, 17.6777], [19.0526, 0, 11]] } } },
+          "data": { "crowd3d": { "clip": "cruise", "speed": 6 } }
+        },
+        "glide": {
+          "shape": { "box": { "size": [1, 0.1, 1] } },
+          "activities": [],
+          "points": { "arc": { "spline": { "points": [[0, 0, 22], [4.9176, 7, 18.3526], [8, 14, 13.8564], [9.1924, 7, 9.1924], [8.6603, 0, 5]] } } },
+          "data": { "crowd3d": { "clip": "glide", "speed": 5 } }
+        }
+      }
+    },
+    "crowd3d": {
+      "bodies": { "soldier": "soldier" },
+      "clips": ["idle", "wave", "walk", "fly", "float", "__POSES"],
+      "rate": 30,
+      "kinds": ["person"],
+      "poolSize": 512,
+      "poses": "poses",
+      "fade": 0.6,
+      "reach": 0.5,
+      "mods": { "paths": "shapes3d" }
+    }
+  },
+  "plugins": [
+    "loader",
+    "scenemanager",
+    "player",
+    "crowd3d",
+    "environment3d",
+    "render3d",
+    "stats"
+  ],
+  "seats": 1,
+  "prefabs": {
+    "engine": {
+      "dt": 0.016666666666666666,
+      "width": 960,
+      "height": 540
+    },
+    "scenemanager": {
+      "out": {}
+    },
+    "loader": {},
+    "render3d": {
+      "camera": { "fov": 60, "near": 0.1, "far": 400, "at": [0, 8, -45], "look": [0, 6, 0] },
+      "pixelRatio": 2,
+      "tone": "neutral",
+      "exposure": 1,
+      "shadows": "soft",
+      "background": "#a9c4e0",
+      "ao": { "on": false, "radius": 0.5, "thickness": 1, "falloff": 1, "scale": 1, "intensity": 1, "samples": 16 },
+      "bloom": { "strength": 0.15, "radius": 0.4, "threshold": 1.5 }
+    },
+    "environment3d": {
+      "sun": {
+        "at": [30, 60, -20],
+        "color": "#fff1dc",
+        "power": 2.6,
+        "shadow": { "map": 2048, "half": 50, "near": 1, "far": 240, "distance": 120, "bias": -0.0004, "normalBias": 0.03 }
+      },
+      "sky": { "color": "#cfe0ff", "ground": "#6f6253", "power": 1.1 }
+    },
+    "ground": {},
+    "player": {
+      "seat": 0,
+      "pos": [0, 8, -45],
+      "view": [0, 0],
+      "stick": [0, 0],
+      "up": false,
+      "down": false,
+      "pace": 0,
+      "placed": false
+    },
+    "start": {
+      "slot": 0,
+      "pos": [0, 8, -45],
+      "view": [0, 0]
+    },
+    "sky": {
+      "time": 0,
+      "placed": false
+    },
+    "inner": { "pos": [0, 0, 0], "yaw": 0 },
+    "middle": { "pos": [0, 0, 0], "yaw": 0 },
+    "outer": { "pos": [0, 0, 0], "yaw": 0 },
+    "soar": { "pos": [0, 0, 0], "yaw": 0 },
+    "glide": { "pos": [0, 0, 0], "yaw": 0 },
+    "person": {
+      "pos": [0, 0, 0],
+      "to": [0, 0, 0],
+      "through": null,
+      "yaw": 0,
+      "speed": 0,
+      "body": "soldier",
+      "clip": "idle",
+      "since": 0,
+      "wait": 0,
+      "path": null
+    }
+  },
+  "actors": [
+    { "is": "scenemanager" },
+    { "is": "loader" },
+    { "is": "sky" },
+    { "is": "start", "slot": 0, "pos": [0, 8, -45], "view": [0, -0.05] },
+    { "is": "ground" },
+    { "is": "inner", "yaw": 0 },
+    { "is": "inner", "yaw": 1.0471975511965976 },
+    { "is": "inner", "yaw": 2.0943951023931953 },
+    { "is": "inner", "yaw": 3.141592653589793 },
+    { "is": "inner", "yaw": 4.1887902047863905 },
+    { "is": "inner", "yaw": 5.235987755982989 },
+    { "is": "middle", "yaw": 0 },
+    { "is": "middle", "yaw": 1.0471975511965976 },
+    { "is": "middle", "yaw": 2.0943951023931953 },
+    { "is": "middle", "yaw": 3.141592653589793 },
+    { "is": "middle", "yaw": 4.1887902047863905 },
+    { "is": "middle", "yaw": 5.235987755982989 },
+    { "is": "outer", "yaw": 0 },
+    { "is": "outer", "yaw": 1.0471975511965976 },
+    { "is": "outer", "yaw": 2.0943951023931953 },
+    { "is": "outer", "yaw": 3.141592653589793 },
+    { "is": "outer", "yaw": 4.1887902047863905 },
+    { "is": "outer", "yaw": 5.235987755982989 },
+    { "is": "soar", "yaw": 0 },
+    { "is": "soar", "yaw": 2.0943951023931953 },
+    { "is": "soar", "yaw": 4.1887902047863905 },
+    { "is": "glide", "yaw": 1.0471975511965976 },
+    { "is": "glide", "yaw": 3.141592653589793 },
+    { "is": "glide", "yaw": 5.235987755982989 }
+  ]
+}
